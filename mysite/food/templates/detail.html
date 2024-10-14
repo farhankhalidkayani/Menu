@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img width="100%" src="{{item.item_img}}" class="card" >
+        </div>
+        <div class="col-md-6">
+ <h1>{{item.item_name}}</h1> 
+    <h2>{{item.item_desc}} </h1>
+    <h3>${{item.item_price}}</h1>
+                    <a href="{% url 'food:edit_item' item.id %}" class="btn btn-success">Edit</a>
+            <a href="{% url 'food:delete_item' item.id %}" class="btn btn-success">Delete</a>
+
+       
+        </div>
+    </div>
+</div>
+   
+{% endblock %}
